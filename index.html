@@ -1,112 +1,167 @@
-/* ------------------------------
-   ESTILOS PADRÃO (TEMA ESCURO)
------------------------------- */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currículo - Thiago Estombelo</title>
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #0d0d0d;
-  color: #ffffff;
-  transition: background 0.3s, color 0.3s;
-}
+  <!-- ------------------------------ ESTILOS ------------------------------ -->
+  <style>
+    /* ------------------ TEMA ESCURO PADRÃO ------------------ */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: #ffffff;
+      transition: background 0.3s, color 0.3s;
+    }
 
-.container {
-  width: 90%;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #1a1a1a;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
 
-/* TÍTULOS */
-h1, h2 {
-  margin-bottom: 12px;
-  color: #ffffff;
-}
+    h1, h2 {
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
 
-/* SEÇÕES */
-.section {
-  margin-bottom: 30px;
-  padding: 20px;
-  border-radius: 12px;
-  background-color: #1f1f1f;
-}
+    .section {
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #1f1f1f;
+    }
 
-/* LINKS */
-a {
-  color: #6bb6ff;
-  text-decoration: none;
-  font-weight: bold;
-}
+    a {
+      color: #6bb6ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-/* LISTAS */
-ul {
-  padding-left: 18px;
-}
+    /* Botão de tema */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
 
-/* BOTÃO DE TEMA */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.3s;
-}
+    .theme-toggle:hover {
+      background-color: #444;
+    }
 
-.theme-toggle:hover {
-  background-color: #444;
-}
+    /* ------------------ TEMA CLARO ------------------ */
+    .light-mode {
+      background-color: #ffffff;
+      color: #1a1a1a;
+    }
 
+    .light-mode .container {
+      background-color: #f0f0f0;
+      color: #1a1a1a;
+    }
 
-/* ------------------------------
-        TEMA CLARO
------------------------------- */
+    .light-mode .section {
+      background-color: #ffffff;
+      color: #1a1a1a;
+    }
 
-.light-mode {
-  background-color: #ffffff;
-  color: #1a1a1a;
-}
+    .light-mode h1, 
+    .light-mode h2 {
+      color: #1a1a1a;
+    }
 
-.light-mode .container {
-  background-color: #f0f0f0;
-  color: #1a1a1a;
-}
+    .light-mode a {
+      color: #0056b3;
+    }
 
-.light-mode .section {
-  background-color: #ffffff;
-  color: #1a1a1a;
-}
+    .light-mode .theme-toggle {
+      background-color: #e0e0e0;
+      color: #1a1a1a;
+    }
 
-/* Títulos no tema claro */
-.light-mode h1,
-.light-mode h2 {
-  color: #1a1a1a;
-}
+    .light-mode .theme-toggle:hover {
+      background-color: #d5d5d5;
+    }
+  </style>
+</head>
 
-/* Links no tema claro */
-.light-mode a {
-  color: #0056b3;
-}
+<body>
 
-/* Botão no tema claro */
-.light-mode .theme-toggle {
-  background-color: #e0e0e0;
-  color: #1a1a1a;
-}
+  <!-- Botão de tema -->
+  <button class="theme-toggle" onclick="toggleTheme()">Alterar Tema</button>
 
-.light-mode .theme-toggle:hover {
-  background-color: #d5d5d5;
-}
+  <div class="container">
+    <h1>Thiago Estombelo</h1>
+    <p>Estudante de Ciência da Computação • Desenvolvimento Web & TI</p>
+
+    <!-- SOBRE MIM -->
+    <div class="section">
+      <h2>Sobre Mim</h2>
+      <p>
+        Sou estudante de Ciência da Computação em busca do meu primeiro estágio na área de TI. 
+        Tenho conhecimentos em Python, Java e C, além de estar aprendendo desenvolvimento web com HTML, CSS e JavaScript.
+      </p>
+
+      <p>
+        Sou comunicativo, aprendo rápido e gosto de trabalhar em equipe. 
+        Tenho como hobbies editar vídeos, produzir música e explorar novas ferramentas e tecnologias.
+      </p>
+    </div>
+
+    <!-- HABILIDADES -->
+    <div class="section">
+      <h2>Habilidades</h2>
+
+      <p><strong>• Linguagens:</strong> Python, Java, C</p>
+      <p><strong>• Web:</strong> HTML, CSS, JavaScript</p>
+      <p><strong>• Ferramentas:</strong> Git, GitHub, VS Code</p>
+      <p><strong>• Soft Skills:</strong> Comunicação, trabalho em equipe, organização</p>
+      <p><strong>• Hobbies:</strong> Produção musical, edição de vídeos</p>
+    </div>
+
+    <!-- CONTATO -->
+    <div class="section">
+      <h2>Contato</h2>
+      <p>Email: <strong>thiagoestombelo@gmail.com</strong></p>
+      <p>GitHub: 
+        <a href="https://github.com/ThiagoEstombelo" target="_blank">
+          github.com/ThiagoEstombelo
+        </a>
+      </p>
+      <p>LinkedIn: 
+        <a href="https://www.linkedin.com/in/thiago-estombelo-llapa-400bba292/" target="_blank">
+          Meu LinkedIn
+        </a>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ------------------------------ SCRIPT ------------------------------ -->
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+
+</body>
+</html>
