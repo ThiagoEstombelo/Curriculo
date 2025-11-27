@@ -3,110 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Currículo - Thiago</title>
+  <title>Currículo - Thiago Estombelo</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    :root {
+      --primary: #111;
+      --secondary: #555;
+      --bg: #f4f4f4;
+      --card: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
+      background: var(--bg);
+      color: var(--primary);
     }
+
     header {
-      background: #111;
-      color: white;
-      padding: 40px 20px;
       text-align: center;
+      padding: 60px 20px;
+      background: var(--primary);
+      color: white;
     }
+
     header h1 {
-      margin: 0;
-      font-size: 2.2rem;
+      font-size: 2.8rem;
     }
+
     header p {
-      margin-top: 8px;
+      margin-top: 10px;
       opacity: 0.8;
+      font-size: 1.1rem;
     }
 
     .container {
       width: 90%;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
     }
 
     .section {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      background: var(--card);
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .section h2 {
       margin-bottom: 15px;
-      border-left: 5px solid #111;
-      padding-left: 10px;
+      border-left: 6px solid var(--primary);
+      padding-left: 12px;
+      font-size: 1.6rem;
     }
 
+    /* Sobre mim */
+    .about-text {
+      line-height: 1.7;
+      font-size: 1.05rem;
+      color: var(--secondary);
+    }
+
+    /* Skills */
     .skills-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
 
     .skill {
-      background: #111;
+      background: var(--primary);
       color: white;
-      padding: 10px 16px;
-      border-radius: 20px;
+      padding: 10px 18px;
+      border-radius: 25px;
       cursor: pointer;
       transition: 0.3s;
+      font-size: 0.95rem;
     }
 
     .skill:hover {
-      background: #444;
-      transform: scale(1.05);
+      background: #333;
+      transform: scale(1.07);
     }
 
     #skill-info {
       margin-top: 20px;
-      padding: 15px;
-      background: #eee;
-      border-radius: 10px;
+      padding: 18px;
+      background: #eaeaea;
+      border-radius: 12px;
       display: none;
+      font-size: 0.95rem;
+    }
+
+    /* Contato */
+    .contact p {
+      margin: 6px 0;
+      font-size: 1.05rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Thiago Estombelo</h1>
-    <p> Estudante de Ciência da Computação • Produtor Musical </p>
+    <p>Estudante de Ciência da Computação • Desenvolvimento Web & TI</p>
   </header>
 
   <div class="container">
 
     <div class="section">
       <h2>Sobre Mim</h2>
-      <p>Sou estudante de Ciência da Computação e estou em busca do meu primeiro estágio na área de TI. Tenho conhecimentos em Python, Java, C e estou aprendendo desenvolvimento web com HTML, CSS e JavaScript.</p>
-
-      <p1>Sou comunicativo, aprendo rápido e gosto de trabalhar em equipe. Como hobbies, gosto de produzir música, editar vídeos e explorar novas ferramentas de tecnologia.</p1>
+      <p class="about-text">
+        Sou estudante de Ciência da Computação em busca do meu primeiro estágio na área de TI. Tenho conhecimentos em Python, Java e C, além de estar aprendendo desenvolvimento web com HTML, CSS e JavaScript.
+        <br><br>
+        Sou comunicativo, aprendo rápido e tenho facilidade em trabalhar em equipe. Como hobbies, gosto de editar vídeos, produzir música e explorar novas ferramentas e tecnologias.
+      </p>
     </div>
 
     <div class="section">
       <h2>Habilidades</h2>
       <div class="skills-list">
-        <div class="skill" data-info="Compreensão de Python, Java e C adquirida na faculdade.">Programação</div>
-        <div class="skill" data-info="Experiência com HTML, CSS e JavaScript, aprendendo desenvolvimento web.">Desenvolvimento Web</div>
-        <div class="skill" data-info="Boa comunicação, facilidade para trabalhar em equipe e se adaptar.">Comunicação</div>
-        <div class="skill" data-info="Organização, pontualidade e foco em resultados.">Soft Skills</div>
-        <div class="skill" data-info="Experiência em gravação e mixagem, uso profissional de Autotune e FL Studio.">Produção Musical</div>
+        <div class="skill" data-info="Experiência com Python, Java e C aprendidos durante o curso.">Programação</div>
+        <div class="skill" data-info="HTML, CSS e JavaScript para criação de sites responsivos.">Desenvolvimento Web</div>
+        <div class="skill" data-info="Edição de vídeos como hobby, usando ferramentas como CapCut, Vegas Pro e DaVinci.">Edição de Vídeo</div>
+        <div class="skill" data-info="Boa comunicação, trabalho em equipe e rápida adaptação.">Soft Skills</div>
+        <div class="skill" data-info="Conhecimentos gerais em tecnologia, hardware e ferramentas digitais.">Tecnologia</div>
       </div>
 
       <div id="skill-info"></div>
     </div>
 
-    <div class="section">
+    <div class="section contact">
       <h2>Contato</h2>
       <p>Email: <strong>thiagoestombelo@gmail.com</strong></p>
-      
+      <p>GitHub: <a href="#">seu-github-aqui</a></p>
+      <p>LinkedIn: <a href="#">seu-linkedin-aqui</a></p>
     </div>
 
   </div>
@@ -122,5 +175,6 @@
       });
     });
   </script>
+
 </body>
 </html>
