@@ -19,6 +19,16 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
+      transition: 0.3s ease;
+    }
+
+    body.dark {
+      --primary: #f1f1f1;
+      --secondary: #cfcfcf;
+      --bg: #1a1a1a;
+      --card: #2a2a2a;
+      background: var(--bg);
+      color: var(--primary);
     }
 
     body {
@@ -41,6 +51,18 @@
       margin-top: 10px;
       opacity: 0.8;
       font-size: 1.1rem;
+    }
+
+    .toggle-btn {
+      margin-top: 20px;
+      background: white;
+      color: black;
+      padding: 10px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     .container {
@@ -70,14 +92,12 @@
       font-size: 1.6rem;
     }
 
-    /* Sobre mim */
     .about-text {
       line-height: 1.7;
       font-size: 1.05rem;
       color: var(--secondary);
     }
 
-    /* Skills */
     .skills-list {
       display: flex;
       flex-wrap: wrap;
@@ -108,20 +128,46 @@
       font-size: 0.95rem;
     }
 
-    /* Contato */
-    .contact p {
-      margin: 6px 0;
-      font-size: 1.05rem;
+    /* Projetos */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    a {
-      color: var(--primary);
-      text-decoration: none;
+    .project-card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Ícones */
+    .contact-icons a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 0;
+      font-size: 1.05rem;
       font-weight: 600;
+      text-decoration: none;
+      color: var(--primary);
     }
-    a:hover {
-      text-decoration: underline;
+
+    .contact-icons img {
+      width: 22px;
     }
+
   </style>
 </head>
 <body>
@@ -129,6 +175,7 @@
   <header>
     <h1>Thiago Estombelo</h1>
     <p>Estudante de Ciência da Computação • Desenvolvimento Web & TI</p>
+    <div class="toggle-btn" onclick="toggleDarkMode()">Alternar Tema</div>
   </header>
 
   <div class="container">
@@ -147,7 +194,7 @@
       <div class="skills-list">
         <div class="skill" data-info="Experiência com Python, Java e C aprendidos durante o curso.">Programação</div>
         <div class="skill" data-info="HTML, CSS e JavaScript para criação de sites responsivos.">Desenvolvimento Web</div>
-        <div class="skill" data-info="Edição de vídeos como hobby, usando ferramentas como CapCut, Vegas Pro e DaVinci.">Edição de Vídeo</div>
+        <div class="skill" data-info="Edição de vídeos como hobby, usando CapCut, Vegas Pro e DaVinci.">Edição de Vídeo</div>
         <div class="skill" data-info="Boa comunicação, trabalho em equipe e rápida adaptação.">Soft Skills</div>
         <div class="skill" data-info="Conhecimentos gerais em tecnologia, hardware e ferramentas digitais.">Tecnologia</div>
       </div>
@@ -155,26 +202,33 @@
       <div id="skill-info"></div>
     </div>
 
-    <div class="section contact">
-      <h2>Contato</h2>
-      <p>Email: <strong>thiagoestombelo@gmail.com</strong></p>
-      <p>GitHub: <a href="#">seu-github-aqui</a></p>
-      <p>LinkedIn: <a href="#">seu-linkedin-aqui</a></p>
+    <div class="section">
+      <h2>Projetos</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Site de Currículo</h3>
+          <p>Projeto desenvolvido em HTML, CSS e JavaScript para apresentação profissional.</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Landing Page Simples</h3>
+          <p>Exercício de estruturação e estilização moderna com layout responsivo.</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Calculadora em JavaScript</h3>
+          <p>Pequena aplicação funcional utilizando lógica básica de programação.</p>
+        </div>
+      </div>
     </div>
 
-  </div>
-
-  <script>
-    const skills = document.querySelectorAll('.skill');
-    const infoBox = document.getElementById('skill-info');
-
-    skills.forEach(skill => {
-      skill.addEventListener('click', () => {
-        infoBox.style.display = 'block';
-        infoBox.textContent = skill.getAttribute('data-info');
-      });
-    });
-  </script>
-
-</body>
-</html>
+    <div class="section contact">
+      <h2>Contato</h2>
+      <div class="contact-icons">
+        <a href="mailto:thiagoestombelo@gmail.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" /> Email
+        </a>
+        <a href="https://github.com/ThiagoEstombelo" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" /> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/thiago-est
